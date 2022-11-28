@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <div class="headers">
+        <h2 class="table-title">Manage products</h2>
+        <ion-button class="btn add" routerLink="/addproducts">Add product</ion-button>
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <h2 class="title">Mobile products</h2>
+  <ion-row class="favorite-items" *ngFor="let text of products">
+
+    <ion-icon name="create-outline" [routerLink]="['/product-edit']" (click)="sendData(text)" style="color:purple; font-size:22px">
+
+    </ion-icon>
+    <ion-col>
+      <img src="{{ text.image }}" />
+      <p><strong>Price:</strong> ${{text.price}}</p>
+      <h6 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{ text.name }}</h6>
+      <h6 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{ text.description }}
+      </h6>
+      <h6 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{ text.category }}
+      </h6>
+      <ion-icon name="trash-outline" style="color:red ; margin-left:200px;" (click)="deleteproduct(text._id)">
+      </ion-icon>
+    </ion-col>
+  </ion-row>

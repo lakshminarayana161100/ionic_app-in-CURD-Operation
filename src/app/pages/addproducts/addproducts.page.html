@@ -1,0 +1,65 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>addproducts</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+ <ion-header>
+  <ion-toolbar>
+    <ion-title>Add Product</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button
+          [text]="Addproduct"
+          [icon]="back">
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header> 
+
+
+<!-- <ion-toolbar>
+  <ion-buttons slot="secondary">
+    <ion-button size="large">
+      Back
+    </ion-button>
+  </ion-buttons>
+  <ion-title>add product</ion-title>
+  <ion-buttons slot="primary">
+    <ion-button>
+      cancel
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar> -->
+
+ <ion-content>
+  
+      <form  #userPost="ngForm" action="" [formGroup]="testForms"   >
+        <ion-item lines="full">
+          <ion-label position="floating">Image</ion-label>
+          <ion-input type="text"  formControlName="image" ></ion-input>
+        </ion-item>
+        <ion-item lines="full">
+          <ion-label position="floating">Name</ion-label>
+          <ion-input type="text" required  formControlName="name"></ion-input>
+        </ion-item>
+        <ion-item lines="full">
+          <ion-label position="floating">Description</ion-label>
+          <ion-input type="text" required formControlName="description"></ion-input>
+        </ion-item>
+        <ion-item lines="full">
+          <ion-label position="floating" >Price</ion-label>
+          <ion-input type="text" required formControlName="price"></ion-input>
+        </ion-item>
+        <ion-item lines="full">
+          <ion-label position="floating" >Category</ion-label>
+          <ion-input type="text" required formControlName="category" ></ion-input>
+        </ion-item>
+        <ion-row>
+          <ion-col>
+            <ion-button type="submit" color="primary" expand=""  (click)="addproduct(userPost.value)">Add product</ion-button>
+          </ion-col>
+        </ion-row>
+      </form>
+    </ion-content> 
+
+

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>product-edit</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button [text]="productedit" [icon]="back">
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="updateproductForm" (ngSubmit)="updateForm(userPost.value)" #userPost="ngForm">
+    <ion-item lines="full">
+      <ion-label position="floating">Image</ion-label>
+      <ion-input type="text" name="image" formControlName="image" [(ngModel)]="real.image"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Name</ion-label>
+      <ion-input type="text" required name="name" formControlName="name" [(ngModel)]="real.name"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Description</ion-label>
+      <ion-input type="text" required name="description" formControlName="description" [(ngModel)]="real.description">
+      </ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Price</ion-label>
+      <ion-input type="text" required name="price" formControlName="price" [(ngModel)]="real.price"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Category</ion-label>
+      <ion-input type="text" required name="category" formControlName="category" [(ngModel)]="real.category">
+      </ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="primary" expand="small" (click)="updateForm(userPost.value)">save</ion-button>
+
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
